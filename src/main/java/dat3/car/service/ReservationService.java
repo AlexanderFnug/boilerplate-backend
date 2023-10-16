@@ -30,11 +30,11 @@ public class ReservationService {
     this.reservationRepository = reservationRepository;
   }
 
-  public ReservationResponse reserveCar(ReservationRequest body){
+  public ReservationResponse reserveCar(ReservationRequest body, String username) {
     if(body.getDate().isBefore(LocalDate.now())){
       throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"Date in past not allowed");
     }
-    Member member = memberRepository.findById(body.getUserName()).orElseThrow(
+    Member member = memberRepository.findById(username).orElseThrow(
             () -> new ResponseStatusException(HttpStatus.NOT_FOUND,"No member with this id found"));
     Car car = carRepository.findById(body.getCarId()).orElseThrow(
             () -> new ResponseStatusException(HttpStatus.NOT_FOUND,"No Car with this id found"));

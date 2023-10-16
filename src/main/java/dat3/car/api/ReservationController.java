@@ -18,8 +18,8 @@ public class ReservationController {
   }
 
   @PostMapping
-  ReservationResponse makeReservation(@RequestBody ReservationRequest res){
-    ReservationResponse r = service.reserveCar(res);
+  ReservationResponse makeReservation(@RequestBody ReservationRequest res, Principal principal){
+    ReservationResponse r = service.reserveCar(res,principal.getName());
     return r;
   }
 
