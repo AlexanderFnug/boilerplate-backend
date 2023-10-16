@@ -13,7 +13,7 @@ public class CorsConfig {
     //When you know the domain name for your client, add it below before deployment
     private static final String[] ALLOWED_ORIGINS = new String[] {
             //"*",
-            "https://cars-backend.azurewebsites.net/",
+            "https://black-sky-0db8f4103.3.azurestaticapps.net",
             "http://127.0.0.1:5500",
             "http://127.0.0.1:5501",
             "http://127.0.0.1:3000"
