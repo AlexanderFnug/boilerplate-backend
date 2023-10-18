@@ -26,4 +26,6 @@ public class ReservationResponse {
     this.reservationDate = reservation.getRentalDate();
     this.pricePrDay = reservation.getCar().getPricePrDay();
   }
+
+
 }
